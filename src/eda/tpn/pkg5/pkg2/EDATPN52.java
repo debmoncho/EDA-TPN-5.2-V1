@@ -7,7 +7,7 @@ public class EDATPN52 {
     
     public static void main(String[] args) {
         
-        //lalalalal
+        //lala
         
         
     }
