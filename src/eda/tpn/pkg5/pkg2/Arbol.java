@@ -1,6 +1,7 @@
 
 package eda.tpn.pkg5.pkg2;
 
+
 /**
  * 1- Diseñe la clase árbol binario usando arreglo, agregue el método insertar,
  * uno de los recorridos y una búsqueda
@@ -18,6 +19,7 @@ public class Arbol {
         this.raiz = null;
     }
     
+    
     public Nodo insertarN(Nodo raiz, int valor) {
 
         if (raiz == null) {
@@ -32,50 +34,74 @@ public class Arbol {
             raiz.derecho = insertarN(raiz.derecho, valor);
         }
 
-        return null;
+        return raiz;
     }
     
-    public void recorrido(){
     
-        int elem = 0;
-        
-        if (raiz.izquierdo != null) {
-            
-            System.out.println(raiz.izquierdo);
+    public void recorridoPreorden(Nodo nodo) {
+        if (nodo == null) {
+            return;
         }
-        
-        if (raiz.izquierdo == null) {
-            System.out.println(raiz.derecho);
-            if(){
-            
-            }
-        }  
-            
-        
 
-        return null;
-    
+        // Visita el nodo raíz
+        System.out.print(nodo.valor + " ");
+
+        
+        // Recorre el subárbol izquierdo
+        recorridoPreorden(nodo.izquierdo);
+
+        // Recorre el subárbol derecho
+        recorridoPreorden(nodo.derecho);
     }
     
     
-    public void busqueda(int valor){
+//    public void recorrido() {
+//
+//        recorridoPreorden(raiz);
+//
+//    }
     
-       Nodo punt = new Nodo();
-       punt = raiz;
-       
-       while(punt != null && punt.valor != valor){
-       
-           if(valor < punt.valor){
-               punt = punt.izquierdo;
-           } else {
-               punt = punt.derecho;
-           }
-           if(punt == null){
-               System.out.println("No se encontro");
-           } else {
-               System.out.println("Se encontro");
-           }
-       }
+    
+    public void busqueda(Nodo nodo, int valor) {
+
+        //Nodo punt = new Nodo();
+        //punt = raiz;
+        Nodo punt = nodo;
+
+        while (punt != null && punt.valor != valor) {
+
+            if (valor < punt.valor) {
+                punt = punt.izquierdo;
+            } else {
+                punt = punt.derecho;
+            }
+
+        }
+
+        if (punt == null) {
+            System.out.println("No se encontro");
+        } else {
+            System.out.println("Se encontro");
+        }
+
     }
+    
+    
+    
+    
+//    public void recorrerInOrden() {
+//        inorden(arbol, 0);
+//    }
+//
+//    public void inorden(int[] arbol, int i) {
+//        if ((arbol[i] != -1) && (i <= tam)) {
+//            inorden(arbol, (2 * i + 1)); //recorro el subarbol izquierdo
+//            System.out.println(arbol[i]); //muestro la raiz
+//            inorden(arbol, (2 * i + 2)); //Recorro el subárbol derecho
+//        }
+//    }
+
+
+    
       
 }
