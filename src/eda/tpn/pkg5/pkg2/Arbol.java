@@ -19,7 +19,7 @@ public class Arbol {
         this.raiz = null;
     }
     
-    
+    // Implementacion enlazada
     public Nodo insertarN(Nodo raiz, int valor) {
 
         if (raiz == null) {
@@ -38,28 +38,22 @@ public class Arbol {
     }
     
     
-    public void recorridoPreorden(Nodo nodo) {
-        if (nodo == null) {
-            return;
-        }
-
-        // Visita el nodo raíz
-        System.out.print(nodo.valor + " ");
-
-        
-        // Recorre el subárbol izquierdo
-        recorridoPreorden(nodo.izquierdo);
-
-        // Recorre el subárbol derecho
-        recorridoPreorden(nodo.derecho);
+    public void recorrerPreOrden(){
+        preOrden(raiz);
     }
     
     
-//    public void recorrido() {
-//
-//        recorridoPreorden(raiz);
-//
-//    }
+    public void preOrden(Nodo nodo) {
+
+        if (nodo == null) {
+            return; //detiene recursividad
+        } else {
+            System.out.print(nodo.getValor() + " ");
+            preOrden(nodo.getIzquierdo());
+            preOrden(nodo.getDerecho());
+        }
+
+    }
     
     
     public void busqueda(Nodo nodo, int valor) {
