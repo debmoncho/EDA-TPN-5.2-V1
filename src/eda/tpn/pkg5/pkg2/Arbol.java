@@ -14,7 +14,7 @@ package eda.tpn.pkg5.pkg2;
 public class Arbol {
     
     private Nodo raiz;
-
+    
     public Arbol() {
         this.raiz = null;
     }
@@ -94,11 +94,16 @@ public class Arbol {
 //    }
 //
 //    public void inorden(int[] arbol, int i) {
-//        if ((arbol[i] != -1) && (i <= tam)) {
+//        
+//        if ((arbol[i] != -1) && (i <= tamanio)) {
+//            
 //            inorden(arbol, (2 * i + 1)); //recorro el subarbol izquierdo
+//            
 //            System.out.println(arbol[i]); //muestro la raiz
+//            
 //            inorden(arbol, (2 * i + 2)); //Recorro el subárbol derecho
 //        }
+//        
 //    }
 
 
